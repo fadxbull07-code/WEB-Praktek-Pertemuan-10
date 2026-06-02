@@ -1,0 +1,378 @@
+/* ================================================
+   Web Desain II — Demo Project
+   File: css/style.css
+   Keterangan: CSS custom untuk melengkapi Bootstrap
+   Pertemuan 1 s/d 10
+   ================================================ */
+
+
+/* ------------------------------------------------
+   PERTEMUAN 2: Responsive Web Design
+   CSS ini bekerja BERSAMA Bootstrap, bukan mengganti
+   ------------------------------------------------ */
+
+/* Reset dasar */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+/* Smooth scroll saat klik link navigasi */
+html {
+  scroll-behavior: smooth;
+}
+
+
+/* ------------------------------------------------
+   PERTEMUAN 4: Kustomisasi komponen Bootstrap
+   Kita bisa override style Bootstrap dari sini
+   ------------------------------------------------ */
+
+/* Navbar — tambah shadow agar terlihat lebih profesional */
+.navbar {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Navbar brand (nama/logo) */
+.navbar-brand {
+  font-weight: bold;
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+}
+
+
+/* ------------------------------------------------
+   HERO SECTION
+   Jumbotron dengan warna gradient custom
+   ------------------------------------------------ */
+.bg-hero {
+  /* PERTEMUAN 2: Contoh CSS yang bisa diubah sesuai kebutuhan */
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  padding: 80px 0;
+}
+
+.bg-hero h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
+}
+
+.bg-hero .lead {
+  font-size: 1.3rem;
+  opacity: 0.9;
+}
+
+
+/* ------------------------------------------------
+   PERTEMUAN 5: Elemen Grid — Card Statistik
+   Tampilan card angka pada section Tentang
+   ------------------------------------------------ */
+.card-stat {
+  border-radius: 10px;
+  transition: transform 0.2s ease;  /* efek hover halus */
+}
+
+/* Efek hover: card naik sedikit */
+.card-stat:hover {
+  transform: translateY(-4px);
+}
+
+.card-stat h4 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+
+/* ------------------------------------------------
+   PERTEMUAN 5 & 6: Tipografi — Section judul
+   Garis bawah dekoratif pada heading section
+   ------------------------------------------------ */
+section h2 {
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  position: relative;
+  display: inline-block;
+}
+
+/* Garis aksen bawah heading */
+section h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: #0f3460;
+  margin: 8px auto 0;
+  border-radius: 2px;
+}
+
+/* PERTEMUAN 6: Blockquote kustom */
+.blockquote {
+  border-left: 4px solid #0f3460;
+  padding-left: 1rem;
+  font-style: italic;
+  color: #555;
+}
+
+
+/* ------------------------------------------------
+   PERTEMUAN 7: Tabel dan Form — tambahan style
+   ------------------------------------------------ */
+
+/* Tabel — header lebih menonjol */
+.table thead th {
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* Form card — tambah border radius */
+.card {
+  border-radius: 12px;
+  border: 1px solid #e0e0e0;
+}
+
+/* Input focus — warna border custom */
+.form-control:focus {
+  border-color: #0f3460;
+  box-shadow: 0 0 0 0.2rem rgba(15, 52, 96, 0.2);
+}
+
+
+/* ------------------------------------------------
+   PERTEMUAN 2: MEDIA QUERY — Responsive Custom
+   Menyesuaikan tampilan di berbagai ukuran layar
+   Ini TAMBAHAN dari responsive Bootstrap
+   ------------------------------------------------ */
+
+/* Layar tablet ke bawah (max 768px) */
+@media (max-width: 768px) {
+  .bg-hero h1 {
+    font-size: 2rem;  /* heading lebih kecil di HP */
+  }
+
+  .bg-hero {
+    padding: 50px 0;  /* padding lebih kecil di HP */
+  }
+
+  /* Tabel di HP: font lebih kecil agar muat */
+  .table {
+    font-size: 0.85rem;
+  }
+}
+
+/* Layar HP kecil (max 480px) */
+@media (max-width: 480px) {
+  .bg-hero h1 {
+    font-size: 1.6rem;
+  }
+
+  .navbar-brand {
+    font-size: 1rem;
+  }
+}
+
+
+/* ------------------------------------------------
+   FOOTER
+   ------------------------------------------------ */
+footer {
+  margin-top: 0;
+}
+
+footer p {
+  font-size: 0.9rem;
+}
+
+
+/* ================================================
+   PERTEMUAN 9: Button & Image
+   CSS tambahan untuk mempercantik section P9
+   ================================================ */
+
+/* Label header card pertemuan — konsisten di P9 & P10 */
+.card-header {
+  border-radius: 12px 12px 0 0 !important;
+}
+
+/* Demo image placeholder (karena kita tidak punya file gambar sungguhan)
+   Digunakan sebagai pengganti <img> nyata di section Image */
+.demo-img-wrap {
+  /* Sudah di-set inline style per elemen untuk fleksibilitas */
+  transition: opacity 0.2s ease;
+}
+
+.demo-img-wrap:hover {
+  opacity: 0.85;
+}
+
+/* ------------------------------------------------
+   PERTEMUAN 9: Efek tambahan pada button
+   Menambah transisi halus saat hover
+   ------------------------------------------------ */
+.btn {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+/* Efek sedikit naik saat hover pada semua tombol */
+.btn:hover:not(:disabled):not(.disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Efek turun saat ditekan (active) */
+.btn:active:not(:disabled):not(.disabled) {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* ------------------------------------------------
+   PERTEMUAN 9: Button Group — tambahan visual
+   ------------------------------------------------ */
+.btn-group .btn:hover {
+  /* Nonaktifkan translateY di dalam group agar tidak pecah layout */
+  transform: none;
+  box-shadow: inset 0 0 0 2px rgba(255,255,255,0.2);
+}
+
+/* Section P9 & P10 berganti background agar mudah dibedakan */
+#button-image {
+  background-color: #f8f9fa;
+}
+
+#helper {
+  background-color: #ffffff;
+}
+
+
+/* ================================================
+   PERTEMUAN 10: Helper Class
+   CSS pendukung untuk demo section P10
+   ================================================ */
+
+/* ------------------------------------------------
+   PERTEMUAN 10: Demo text-hide (Image Replacement)
+   Teknik mengganti teks dengan background-image
+   Teks tetap ada di DOM untuk screen reader & SEO
+   ------------------------------------------------ */
+.demo-text-hide {
+  /* Simulasi gambar logo menggunakan gradient sebagai pengganti background-image nyata */
+  background: linear-gradient(135deg, #0f3460 0%, #16213e 50%, #1a1a2e 100%);
+  height: 60px;
+  width: 200px;
+  /* text-hide dari Bootstrap:
+     font: 0/0 a; color: transparent; text-shadow: none; background-color: transparent; border: 0;
+     Kita tambahkan sendiri karena Bootstrap 4 sudah deprecated text-hide */
+  font-size: 0;
+  color: transparent;
+  text-shadow: none;
+  border: 0;
+  /* Untuk visual demo */
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Pseudo-element sebagai label "logo" di dalam kotak demo */
+.demo-text-hide::after {
+  content: 'MI Univ — Logo';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* ------------------------------------------------
+   PERTEMUAN 10: Responsive Utility demo
+   Styling alert demo agar lebih menarik
+   ------------------------------------------------ */
+.alert {
+  border-radius: 8px;
+}
+
+/* ------------------------------------------------
+   PERTEMUAN 10: Contextual background — tambahan shadow
+   agar kotak warna lebih terlihat dimensinya
+   ------------------------------------------------ */
+[class*="bg-"]:not(.navbar):not(.bg-hero):not(.card-header):not(footer) {
+  /* Biarkan Bootstrap menangani — tidak ada override global */
+}
+
+/* ------------------------------------------------
+   PERTEMUAN 10: Icon Font Awesome — area demo
+   Pastikan icon terlihat cukup besar dan terpusat
+   ------------------------------------------------ */
+.fa-2x,
+.fa-3x {
+  /* Bootstrap sudah handle via Font Awesome,
+     tambahkan transisi agar hover lebih smooth */
+  transition: transform 0.2s ease, color 0.2s ease;
+  display: inline-block;
+}
+
+.fa-2x:hover,
+.fa-3x:hover {
+  transform: scale(1.15);
+}
+
+/* ------------------------------------------------
+   PERTEMUAN 10: Clearfix demo — border warna
+   lebih jelas untuk keperluan pembelajaran
+   ------------------------------------------------ */
+.border-danger {
+  border-color: #dc3545 !important;
+}
+
+.border-success {
+  border-color: #28a745 !important;
+}
+
+/* ------------------------------------------------
+   PERTEMUAN 10: sr-only-focusable
+   Tombol "skip to content" hanya muncul saat di-focus
+   (aksesibilitas keyboard)
+   ------------------------------------------------ */
+.sr-only-focusable:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+
+/* ------------------------------------------------
+   PERTEMUAN 9 & 10: Tambahan media query
+   Responsif untuk section baru
+   ------------------------------------------------ */
+@media (max-width: 768px) {
+
+  /* Demo image wrap lebih kecil di HP */
+  .demo-img-wrap {
+    height: 100px !important;
+  }
+
+  /* Demo text-hide lebih kecil di HP */
+  .demo-text-hide {
+    width: 160px;
+    height: 50px;
+  }
+
+  /* Card header font-size lebih kecil di HP */
+  .card-header small {
+    display: none; /* sembunyikan keterangan kecil di HP */
+  }
+}
+
+@media (max-width: 480px) {
+
+  /* Icon demo — lebih kecil di HP sangat kecil */
+  .fa-2x {
+    font-size: 1.5em;
+  }
+}
