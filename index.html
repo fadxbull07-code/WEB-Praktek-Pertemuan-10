@@ -1,0 +1,1239 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+
+  <!-- =============================================
+       PERTEMUAN 1: Struktur Dasar & Meta Viewport
+       Meta viewport WAJIB untuk Responsive Design
+  ============================================== -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profil Jurusan Manajemen Informatika</title>
+
+  <!-- =============================================
+       PERTEMUAN 4: Include Bootstrap 4 via CDN
+       Bootstrap harus di-include sebelum file CSS kita
+  ============================================== -->
+  <link rel="stylesheet" href="bootstrap-4.5.3-dist/css/bootstrap.css">
+
+  <!-- =============================================
+       PERTEMUAN 10: Font Awesome untuk Icon
+       CDN Font Awesome 5 Free
+  ============================================== -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+  <!-- CSS custom kita (setelah Bootstrap agar bisa override) -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- =============================================
+       PERTEMUAN 4: Navbar Bootstrap
+       navbar-expand-lg = collapse di layar < lg
+       navbar-dark bg-dark = tema gelap
+  ============================================== -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">MI Univ</a>
+
+    <!-- Tombol hamburger untuk layar kecil (responsive!) -->
+    <button class="navbar-toggler" type="button"
+      data-toggle="collapse" data-target="#navbarMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarMenu">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item"><a class="nav-link" href="#tentang">Tentang</a></li>
+        <li class="nav-item"><a class="nav-link" href="#grid">Grid</a></li>
+        <li class="nav-item"><a class="nav-link" href="#tipografi">Tipografi</a></li>
+        <li class="nav-item"><a class="nav-link" href="#mahasiswa">Mahasiswa</a></li>
+        <li class="nav-item"><a class="nav-link" href="#daftar">Daftar</a></li>
+        <!-- PERTEMUAN 9: Tambah link navbar baru -->
+        <li class="nav-item"><a class="nav-link" href="#button-image">Button &amp; Image</a></li>
+        <!-- PERTEMUAN 10: Tambah link navbar baru -->
+        <li class="nav-item"><a class="nav-link" href="#helper">Helper Class</a></li>
+      </ul>
+    </div>
+  </nav>
+  <!-- /NAVBAR -->
+
+
+  <!-- =============================================
+       HERO SECTION
+       Jumbotron Bootstrap untuk header halaman
+  ============================================== -->
+  <div class="jumbotron jumbotron-fluid bg-hero text-white text-center">
+    <div class="container">
+      <h1 class="display-4">Manajemen Informatika</h1>
+      <p class="lead">Program Studi D3 — Teknologi, Kreatif, dan Inovatif</p>
+      <a href="#daftar" class="btn btn-light btn-lg mt-2">Daftar Sekarang</a>
+    </div>
+  </div>
+  <!-- /HERO -->
+
+
+  <!-- =============================================
+       PERTEMUAN 5: GRID BOOTSTRAP — Section Tentang
+       .container > .row > .col-*
+       Grid 12 kolom, responsif di berbagai ukuran layar
+  ============================================== -->
+  <section id="tentang" class="py-5">
+    <div class="container">
+
+      <!-- Judul section -->
+      <div class="row mb-4">
+        <div class="col-12 text-center">
+          <h2>Tentang Jurusan</h2>
+          <p class="text-muted">Mengenal lebih dalam Program Studi D3 Manajemen Informatika</p>
+        </div>
+      </div>
+
+      <!-- PERTEMUAN 5: Grid 2 kolom — col-md-6 -->
+      <!-- Di layar besar: 2 kolom | Di HP: 1 kolom penuh -->
+      <div class="row align-items-center">
+        <div class="col-12 col-md-6">
+          <!-- PERTEMUAN 5 & 6: Tipografi — Heading, paragraf, lead -->
+          <h3>Visi Jurusan</h3>
+          <p class="lead">Mencetak tenaga ahli di bidang teknologi informasi yang kompeten dan berdaya saing.</p>
+          <p>
+            Program studi <abbr title="Manajemen Informatika">MI</abbr> berfokus pada
+            pengembangan sistem informasi, pemrograman web, dan manajemen basis data.
+            Lulusan kami siap bekerja di industri teknologi maupun berwirausaha.
+          </p>
+          <!-- PERTEMUAN 6: Tag <address> -->
+          <address>
+            <strong>Kampus Utama</strong><br>
+            Jl. Raya Pekanbaru No. 1<br>
+            Pekanbaru, Riau 28291<br>
+            <a href="tel:+6276112345">(0761) 12345</a>
+          </address>
+        </div>
+
+        <!-- PERTEMUAN 5: Kolom kedua -->
+        <div class="col-12 col-md-6">
+          <!-- PERTEMUAN 5: Grid di dalam grid (Nesting Column) -->
+          <div class="row">
+            <div class="col-6 mb-3">
+              <div class="card-stat bg-primary text-white text-center p-3 rounded">
+                <h4 class="mb-0">500+</h4>
+                <small>Mahasiswa Aktif</small>
+              </div>
+            </div>
+            <div class="col-6 mb-3">
+              <div class="card-stat bg-success text-white text-center p-3 rounded">
+                <h4 class="mb-0">20+</h4>
+                <small>Dosen Pengajar</small>
+              </div>
+            </div>
+            <div class="col-6 mb-3">
+              <div class="card-stat bg-warning text-white text-center p-3 rounded">
+                <h4 class="mb-0">95%</h4>
+                <small>Tingkat Kelulusan</small>
+              </div>
+            </div>
+            <div class="col-6 mb-3">
+              <div class="card-stat bg-danger text-white text-center p-3 rounded">
+                <h4 class="mb-0">50+</h4>
+                <small>Mitra Industri</small>
+              </div>
+            </div>
+          </div>
+          <!-- /NESTING COLUMN -->
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <!-- /TENTANG -->
+
+
+  <!-- =============================================
+       PERTEMUAN 5: GRID — Section Mata Kuliah
+       Contoh: 3 kolom dengan offset
+  ============================================== -->
+  <section id="grid" class="py-5 bg-light">
+    <div class="container">
+
+      <div class="row mb-4">
+        <div class="col-12 text-center">
+          <h2>Mata Kuliah Unggulan</h2>
+          <p class="text-muted">Kurikulum dirancang sesuai kebutuhan industri</p>
+        </div>
+      </div>
+
+      <!-- PERTEMUAN 5: 3 kolom sama rata col-md-4 -->
+      <div class="row">
+        <div class="col-12 col-md-4 mb-3">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Pemrograman Web</h5>
+              <p class="card-text text-muted">
+                Belajar HTML, CSS, JavaScript, dan framework modern
+                untuk membangun aplikasi web profesional.
+              </p>
+              <!-- PERTEMUAN 6: Tag kode -->
+              <p>Teknologi: <code>HTML5</code>, <code>CSS3</code>, <code>Bootstrap</code></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-4 mb-3">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Basis Data</h5>
+              <p class="card-text text-muted">
+                Merancang dan mengelola database relasional menggunakan
+                SQL dan sistem manajemen database modern.
+              </p>
+              <p>Teknologi: <code>MySQL</code>, <code>PostgreSQL</code></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-4 mb-3">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Jaringan Komputer</h5>
+              <p class="card-text text-muted">
+                Memahami konsep jaringan, protokol komunikasi,
+                dan keamanan sistem jaringan komputer.
+              </p>
+              <p>Tools: <code>Cisco Packet Tracer</code></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PERTEMUAN 5: Contoh OFFSET — kolom di tengah -->
+      <div class="row mt-3">
+        <div class="col-12 col-md-8 offset-md-2 text-center">
+          <div class="alert alert-info">
+            <strong>Info:</strong> Seluruh mata kuliah menggunakan pendekatan
+            <em>project-based learning</em> untuk pengalaman belajar yang optimal.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <!-- /GRID -->
+
+
+  <!-- =============================================
+       PERTEMUAN 5 & 6: TIPOGRAFI BOOTSTRAP
+       Contoh lengkap elemen tipografi
+  ============================================== -->
+  <section id="tipografi" class="py-5">
+    <div class="container">
+
+      <div class="row mb-4">
+        <div class="col-12 text-center">
+          <h2>Pengumuman &amp; Informasi</h2>
+        </div>
+      </div>
+
+      <div class="row">
+        <!-- Kolom kiri: Tipografi teks -->
+        <div class="col-12 col-md-6 mb-4">
+          <h4>Berita Terkini</h4>
+
+          <!-- PERTEMUAN 6: Blockquote -->
+          <blockquote class="blockquote border-left pl-3">
+            <p class="mb-1">
+              "Jurusan Manajemen Informatika menerima penghargaan sebagai
+              program studi terbaik se-Provinsi Riau tahun ini."
+            </p>
+            <footer class="blockquote-footer">
+              Rektor Universitas, <cite>Sidang Senat 2024</cite>
+            </footer>
+          </blockquote>
+
+          <!-- PERTEMUAN 5: Text formatting -->
+          <p>
+            <strong>Pendaftaran mahasiswa baru</strong> dibuka mulai
+            <mark>1 Juni 2025</mark>. Segera lengkapi berkas Anda!
+          </p>
+
+          <!-- PERTEMUAN 5: Text alignment -->
+          <p class="text-center text-muted">
+            <small>Informasi terakhir diperbarui: Mei 2025</small>
+          </p>
+
+          <!-- PERTEMUAN 6: List unstyled dan inline -->
+          <h5>Persyaratan Pendaftaran</h5>
+          <ul class="list-unstyled">
+            <li>&#10003; Ijazah SMA/SMK/Sederajat</li>
+            <li>&#10003; Foto 3x4 background merah</li>
+            <li>&#10003; KTP / Kartu Keluarga</li>
+            <li>&#10003; Surat keterangan sehat</li>
+          </ul>
+
+          <!-- PERTEMUAN 5: Text transform -->
+          <p class="text-uppercase font-weight-bold text-primary">
+            daftarkan diri anda sekarang!
+          </p>
+        </div>
+
+        <!-- Kolom kanan: Contoh kode (P6) -->
+        <div class="col-12 col-md-6 mb-4">
+          <h4>Panduan Teknis</h4>
+          <p>Untuk mengakses portal akademik, tekan
+            <kbd>Ctrl</kbd> + <kbd>L</kbd> lalu ketik alamat berikut:
+          </p>
+
+          <!-- PERTEMUAN 6: Tag <pre> dan <code> -->
+          <pre><code>https://portal.mi-univ.ac.id/login</code></pre>
+
+          <p>Gunakan perintah berikut untuk instal dependencies:</p>
+          <pre><code>npm install bootstrap@4.5.2
+npm install jquery popper.js</code></pre>
+
+          <!-- PERTEMUAN 6: List inline -->
+          <h5 class="mt-3">Platform yang Didukung</h5>
+          <ul class="list-inline">
+            <li class="list-inline-item badge badge-secondary">Windows</li>
+            <li class="list-inline-item badge badge-secondary">macOS</li>
+            <li class="list-inline-item badge badge-secondary">Linux</li>
+            <li class="list-inline-item badge badge-secondary">Android</li>
+            <li class="list-inline-item badge badge-secondary">iOS</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <!-- /TIPOGRAFI -->
+
+
+  <!-- =============================================
+       PERTEMUAN 7: TABEL BOOTSTRAP
+       Berbagai style tabel Bootstrap
+  ============================================== -->
+  <section id="mahasiswa" class="py-5 bg-light">
+    <div class="container">
+
+      <div class="row mb-4">
+        <div class="col-12 text-center">
+          <h2>Data Mahasiswa</h2>
+          <p class="text-muted">Daftar mahasiswa aktif semester ini</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12">
+          <!-- PERTEMUAN 7: Tabel responsif -->
+          <div class="table-responsive">
+            <table class="table table-striped table-bordered table-hover">
+              <thead class="thead-dark">
+                <tr>
+                  <th>#</th>
+                  <th>NIM</th>
+                  <th>Nama Mahasiswa</th>
+                  <th>Semester</th>
+                  <th>IPK</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- PERTEMUAN 7: Contextual class pada baris/sel -->
+                <tr>
+                  <td>1</td>
+                  <td>MI2024001</td>
+                  <td>Andi Pratama</td>
+                  <td>3</td>
+                  <td>3.85</td>
+                  <td><span class="badge badge-success">Aktif</span></td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>MI2024002</td>
+                  <td>Budi Santoso</td>
+                  <td>3</td>
+                  <td>3.50</td>
+                  <td><span class="badge badge-success">Aktif</span></td>
+                </tr>
+                <tr class="table-warning">
+                  <td>3</td>
+                  <td>MI2024003</td>
+                  <td>Citra Dewi</td>
+                  <td>3</td>
+                  <td>2.90</td>
+                  <td><span class="badge badge-warning">Perhatian</span></td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>MI2024004</td>
+                  <td>Doni Kurniawan</td>
+                  <td>3</td>
+                  <td>3.70</td>
+                  <td><span class="badge badge-success">Aktif</span></td>
+                </tr>
+                <tr class="table-danger">
+                  <td>5</td>
+                  <td>MI2024005</td>
+                  <td>Eka Putri</td>
+                  <td>3</td>
+                  <td>2.00</td>
+                  <td><span class="badge badge-danger">Probasi</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- /TABLE-RESPONSIVE -->
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <!-- /TABEL -->
+
+
+  <!-- =============================================
+       PERTEMUAN 7: FORM BOOTSTRAP
+       Basic Form dengan berbagai elemen kontrol
+  ============================================== -->
+  <section id="daftar" class="py-5">
+    <div class="container">
+
+      <div class="row mb-4">
+        <div class="col-12 text-center">
+          <h2>Form Pendaftaran</h2>
+          <p class="text-muted">Isi data diri Anda untuk mendaftar</p>
+        </div>
+      </div>
+
+      <!-- PERTEMUAN 5: Form dalam grid — col-md-8 offset-md-2 -->
+      <div class="row">
+        <div class="col-12 col-md-8 offset-md-2">
+          <div class="card shadow-sm">
+            <div class="card-body p-4">
+
+              <!-- PERTEMUAN 7: Basic Form -->
+              <form id="formPendaftaran">
+
+                <!-- PERTEMUAN 7: Horizontal Form -->
+                <div class="form-group row">
+                  <label class="col-sm-3 col-form-label">Nama Lengkap</label>
+                  <div class="col-sm-9">
+                    <input type="text" class="form-control" id="inputNama"
+                           placeholder="Masukkan nama lengkap Anda">
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label class="col-sm-3 col-form-label">Email</label>
+                  <div class="col-sm-9">
+                    <input type="email" class="form-control" id="inputEmail"
+                           placeholder="contoh@email.com">
+                    <!-- PERTEMUAN 7: Teks bantu form -->
+                    <small class="form-text text-muted">
+                      Email akan digunakan sebagai username login portal.
+                    </small>
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label class="col-sm-3 col-form-label">No. HP</label>
+                  <div class="col-sm-9">
+                    <input type="tel" class="form-control" id="inputHP"
+                           placeholder="08xxxxxxxxxx">
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label class="col-sm-3 col-form-label">Asal Sekolah</label>
+                  <div class="col-sm-9">
+                    <input type="text" class="form-control" id="inputSekolah"
+                           placeholder="SMA/SMK asal">
+                  </div>
+                </div>
+
+                <!-- PERTEMUAN 7: Select control -->
+                <div class="form-group row">
+                  <label class="col-sm-3 col-form-label">Jalur Masuk</label>
+                  <div class="col-sm-9">
+                    <select class="form-control" id="selectJalur">
+                      <option value="">-- Pilih Jalur --</option>
+                      <option>Reguler</option>
+                      <option>Beasiswa</option>
+                      <option>Pindahan</option>
+                    </select>
+                  </div>
+                </div>
+
+                <!-- PERTEMUAN 7: Textarea -->
+                <div class="form-group row">
+                  <label class="col-sm-3 col-form-label">Motivasi</label>
+                  <div class="col-sm-9">
+                    <textarea class="form-control" id="inputMotivasi"
+                              rows="3"
+                              placeholder="Tuliskan motivasi Anda bergabung..."></textarea>
+                  </div>
+                </div>
+
+                <!-- PERTEMUAN 7: Checkbox -->
+                <div class="form-group row">
+                  <div class="col-sm-9 offset-sm-3">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="checkSetuju">
+                      <label class="form-check-label" for="checkSetuju">
+                        Saya menyetujui <a href="#">syarat dan ketentuan</a> yang berlaku
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Tombol submit -->
+                <div class="form-group row">
+                  <div class="col-sm-9 offset-sm-3">
+                    <button type="button" class="btn btn-primary"
+                            onclick="kirimForm()">
+                      Kirim Pendaftaran
+                    </button>
+                    <button type="reset" class="btn btn-secondary ml-2">
+                      Reset
+                    </button>
+                  </div>
+                </div>
+
+              </form>
+              <!-- /FORM -->
+
+              <!-- Area notifikasi (diisi oleh JS) -->
+              <div id="notifikasi"></div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <!-- /FORM -->
+
+
+  <!-- =============================================
+       PERTEMUAN 9: BUTTON & IMAGE BOOTSTRAP
+       Materi: Tag Button, Style Button, Ukuran Button,
+       Efek Ditekan, Menonaktifkan Button, dan Image
+  ============================================== -->
+  <section id="button-image" class="py-5 bg-light">
+    <div class="container">
+
+      <div class="row mb-4">
+        <div class="col-12 text-center">
+          <h2>Button &amp; Image</h2>
+          <p class="text-muted">Pertemuan 9 — Komponen Button dan Gambar dengan Bootstrap</p>
+        </div>
+      </div>
+
+      <!-- ---- 9A: Style Button ---- -->
+      <div class="row mb-4">
+        <div class="col-12">
+          <div class="card shadow-sm">
+            <div class="card-header bg-dark text-white">
+              <strong>9A — Style Button</strong>
+              <small class="ml-2 text-muted">class="btn btn-*"</small>
+            </div>
+            <div class="card-body">
+              <p class="text-muted mb-3">
+                Bootstrap menyediakan berbagai warna tombol menggunakan
+                class <code>btn</code> dikombinasikan dengan <code>btn-[warna]</code>.
+              </p>
+              <!-- PERTEMUAN 9: Berbagai style button Bootstrap -->
+              <button type="button" class="btn btn-primary mr-2 mb-2">Primary</button>
+              <button type="button" class="btn btn-secondary mr-2 mb-2">Secondary</button>
+              <button type="button" class="btn btn-success mr-2 mb-2">Success</button>
+              <button type="button" class="btn btn-danger mr-2 mb-2">Danger</button>
+              <button type="button" class="btn btn-warning mr-2 mb-2">Warning</button>
+              <button type="button" class="btn btn-info mr-2 mb-2">Info</button>
+              <button type="button" class="btn btn-light mr-2 mb-2">Light</button>
+              <button type="button" class="btn btn-dark mr-2 mb-2">Dark</button>
+              <!-- Tag button alternatif: <a> dan <input> -->
+              <a href="#" class="btn btn-primary mr-2 mb-2" role="button">Link sebagai Button</a>
+              <input type="button" class="btn btn-secondary mb-2" value="Input sebagai Button">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ---- 9B: Outline Button ---- -->
+      <div class="row mb-4">
+        <div class="col-12">
+          <div class="card shadow-sm">
+            <div class="card-header bg-dark text-white">
+              <strong>9B — Outline Button</strong>
+              <small class="ml-2 text-muted">class="btn btn-outline-*"</small>
+            </div>
+            <div class="card-body">
+              <p class="text-muted mb-3">
+                Variasi tombol dengan hanya border (tanpa fill background),
+                menggunakan class <code>btn-outline-[warna]</code>.
+              </p>
+              <!-- PERTEMUAN 9: Outline buttons -->
+              <button type="button" class="btn btn-outline-primary mr-2 mb-2">Primary</button>
+              <button type="button" class="btn btn-outline-secondary mr-2 mb-2">Secondary</button>
+              <button type="button" class="btn btn-outline-success mr-2 mb-2">Success</button>
+              <button type="button" class="btn btn-outline-danger mr-2 mb-2">Danger</button>
+              <button type="button" class="btn btn-outline-warning mr-2 mb-2">Warning</button>
+              <button type="button" class="btn btn-outline-info mr-2 mb-2">Info</button>
+              <button type="button" class="btn btn-outline-dark mr-2 mb-2">Dark</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ---- 9C: Ukuran Button ---- -->
+      <div class="row mb-4">
+        <div class="col-12 col-md-6 mb-3">
+          <div class="card shadow-sm h-100">
+            <div class="card-header bg-dark text-white">
+              <strong>9C — Ukuran Button</strong>
+              <small class="ml-2 text-muted">btn-lg / btn-sm</small>
+            </div>
+            <div class="card-body">
+              <p class="text-muted mb-3">
+                Ukuran tombol dapat diatur dengan class
+                <code>btn-lg</code> (besar) dan <code>btn-sm</code> (kecil).
+              </p>
+              <!-- PERTEMUAN 9: Mengatur ukuran button -->
+              <div class="mb-2">
+                <button type="button" class="btn btn-primary btn-lg mr-2">Besar (lg)</button>
+                <button type="button" class="btn btn-primary mr-2">Normal</button>
+                <button type="button" class="btn btn-primary btn-sm">Kecil (sm)</button>
+              </div>
+              <!-- PERTEMUAN 9: Button block (lebar penuh) -->
+              <p class="text-muted mt-3 mb-2"><code>btn-block</code> — tombol selebar container:</p>
+              <button type="button" class="btn btn-success btn-lg btn-block">
+                Button Block (Penuh)
+              </button>
+              <button type="button" class="btn btn-secondary btn-block">
+                Button Block Normal
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ---- 9D: Efek Active & Disabled ---- -->
+        <div class="col-12 col-md-6 mb-3">
+          <div class="card shadow-sm h-100">
+            <div class="card-header bg-dark text-white">
+              <strong>9D — Efek Active &amp; Disabled</strong>
+            </div>
+            <div class="card-body">
+              <p class="text-muted mb-3">
+                Class <code>active</code> memberi efek tombol seperti ditekan.
+                Attribute <code>disabled</code> menonaktifkan tombol.
+              </p>
+              <!-- PERTEMUAN 9: Efek tombol seperti ditekan -->
+              <p class="mb-1"><strong>Efek Active (seperti ditekan):</strong></p>
+              <button type="button" class="btn btn-primary active mr-2 mb-3">
+                Aktif / Ditekan
+              </button>
+              <button type="button" class="btn btn-success active mb-3">
+                Active Success
+              </button>
+
+              <!-- PERTEMUAN 9: Menonaktifkan button -->
+              <p class="mb-1"><strong>Button Dinonaktifkan (disabled):</strong></p>
+              <button type="button" class="btn btn-primary mr-2 mb-2" disabled>
+                Disabled Primary
+              </button>
+              <button type="button" class="btn btn-secondary mb-2" disabled>
+                Disabled Secondary
+              </button>
+              <!-- Disabled pada tag <a> -->
+              <p class="mb-1"><strong>Link Button Disabled:</strong></p>
+              <a href="#" class="btn btn-danger disabled" role="button"
+                 aria-disabled="true">Link Disabled</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ---- 9E: Kelompok Button (Button Group) ---- -->
+      <div class="row mb-4">
+        <div class="col-12">
+          <div class="card shadow-sm">
+            <div class="card-header bg-dark text-white">
+              <strong>9E — Button Group</strong>
+              <small class="ml-2 text-muted">class="btn-group"</small>
+            </div>
+            <div class="card-body">
+              <p class="text-muted mb-3">
+                Kelompokkan tombol menjadi satu kesatuan dengan
+                <code>btn-group</code>, atau susun vertikal dengan
+                <code>btn-group-vertical</code>.
+              </p>
+              <!-- PERTEMUAN 9: Button group horizontal -->
+              <p class="mb-2"><strong>Horizontal:</strong></p>
+              <div class="btn-group mr-3 mb-3" role="group">
+                <button type="button" class="btn btn-primary">Kiri</button>
+                <button type="button" class="btn btn-primary">Tengah</button>
+                <button type="button" class="btn btn-primary">Kanan</button>
+              </div>
+              <div class="btn-group mb-3" role="group">
+                <button type="button" class="btn btn-outline-secondary">1</button>
+                <button type="button" class="btn btn-outline-secondary">2</button>
+                <button type="button" class="btn btn-outline-secondary">3</button>
+                <button type="button" class="btn btn-outline-secondary">4</button>
+              </div>
+              <!-- PERTEMUAN 9: Button group vertikal -->
+              <p class="mb-2"><strong>Vertikal:</strong></p>
+              <div class="btn-group-vertical" role="group">
+                <button type="button" class="btn btn-info">Atas</button>
+                <button type="button" class="btn btn-info">Tengah</button>
+                <button type="button" class="btn btn-info">Bawah</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ---- 9F: Image Bootstrap ---- -->
+      <div class="row mb-2">
+        <div class="col-12">
+          <div class="card shadow-sm">
+            <div class="card-header bg-dark text-white">
+              <strong>9F — Image Bootstrap</strong>
+              <small class="ml-2 text-muted">img-fluid, rounded, rounded-circle, img-thumbnail</small>
+            </div>
+            <div class="card-body">
+              <p class="text-muted mb-4">
+                Bootstrap menyediakan class khusus untuk menampilkan gambar secara responsif
+                dan dengan berbagai gaya tampilan.
+              </p>
+
+              <div class="row text-center">
+                <!-- PERTEMUAN 9: img-fluid = responsif mengikuti lebar kolom -->
+                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                  <div class="demo-img-wrap bg-secondary d-flex align-items-center
+                               justify-content-center rounded mb-2"
+                       style="height:130px;">
+                    <span class="text-white font-weight-bold">img-fluid</span>
+                  </div>
+                  <code class="d-block mb-1">class="img-fluid"</code>
+                  <small class="text-muted">Gambar menyesuaikan lebar kolom (responsif)</small>
+                </div>
+
+                <!-- PERTEMUAN 9: rounded = sudut membulat -->
+                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                  <div class="demo-img-wrap bg-primary d-flex align-items-center
+                               justify-content-center rounded mb-2"
+                       style="height:130px;">
+                    <span class="text-white font-weight-bold">rounded</span>
+                  </div>
+                  <code class="d-block mb-1">class="img-fluid rounded"</code>
+                  <small class="text-muted">Sudut gambar dibuat melengkung</small>
+                </div>
+
+                <!-- PERTEMUAN 9: rounded-circle = berbentuk lingkaran -->
+                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                  <div class="demo-img-wrap bg-success d-flex align-items-center
+                               justify-content-center rounded-circle mx-auto mb-2"
+                       style="height:130px; width:130px;">
+                    <span class="text-white font-weight-bold">circle</span>
+                  </div>
+                  <code class="d-block mb-1">class="rounded-circle"</code>
+                  <small class="text-muted">Gambar ditampilkan berbentuk lingkaran</small>
+                </div>
+
+                <!-- PERTEMUAN 9: img-thumbnail = gambar dengan border -->
+                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                  <div class="demo-img-wrap bg-warning d-flex align-items-center
+                               justify-content-center img-thumbnail mx-auto mb-2"
+                       style="height:130px; width:130px;">
+                    <span class="text-dark font-weight-bold">thumbnail</span>
+                  </div>
+                  <code class="d-block mb-1">class="img-thumbnail"</code>
+                  <small class="text-muted">Gambar dengan border dan padding</small>
+                </div>
+              </div>
+
+              <!-- PERTEMUAN 9: Alignment gambar -->
+              <hr>
+              <h6 class="mt-3 mb-3">Alignment Gambar dengan Float</h6>
+              <div class="clearfix">
+                <div class="demo-img-wrap bg-info rounded float-left mr-3 mb-2
+                             d-flex align-items-center justify-content-center"
+                     style="width:100px; height:80px;">
+                  <small class="text-white font-weight-bold">float-left</small>
+                </div>
+                <p>
+                  Gambar dengan <code>float-left</code> akan membuat teks mengalir
+                  di sebelah kanan gambar. Ini berguna untuk layout artikel atau berita
+                  yang memerlukan gambar di sisi teks. Gunakan <code>clearfix</code>
+                  pada parent agar layout tidak rusak setelah gambar float.
+                </p>
+              </div>
+              <div class="clearfix mt-2">
+                <div class="demo-img-wrap bg-danger rounded float-right ml-3 mb-2
+                             d-flex align-items-center justify-content-center"
+                     style="width:100px; height:80px;">
+                  <small class="text-white font-weight-bold">float-right</small>
+                </div>
+                <p>
+                  Gambar dengan <code>float-right</code> akan membuat teks mengalir
+                  di sebelah kiri gambar. Kombinasi float dan clearfix adalah
+                  teknik layout klasik yang tetap relevan digunakan bersama Bootstrap.
+                </p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <!-- /BUTTON & IMAGE -->
+
+
+  <!-- =============================================
+       PERTEMUAN 10: HELPER CLASS BOOTSTRAP
+       Materi: Contextual Color, Contextual Background,
+       Icon, Clearfix, Show/Hide, Screen Reader,
+       Image Replacement, Responsive Utility
+  ============================================== -->
+  <section id="helper" class="py-5">
+    <div class="container">
+
+      <div class="row mb-4">
+        <div class="col-12 text-center">
+          <h2>Helper Class Bootstrap</h2>
+          <p class="text-muted">Pertemuan 10 — Kelas Pembantu untuk Styling Cepat</p>
+        </div>
+      </div>
+
+      <!-- ---- 10A: Contextual Color ---- -->
+      <div class="row mb-4">
+        <div class="col-12">
+          <div class="card shadow-sm">
+            <div class="card-header bg-dark text-white">
+              <strong>10A — Contextual Color</strong>
+              <small class="ml-2 text-muted">class="text-*"</small>
+            </div>
+            <div class="card-body">
+              <p class="text-muted mb-3">
+                Ubah warna teks secara cepat menggunakan class
+                <code>text-[warna]</code> tanpa perlu menulis CSS tambahan.
+              </p>
+              <!-- PERTEMUAN 10: Contextual color pada teks -->
+              <p class="text-primary"><strong>text-primary</strong> — Warna biru utama (primary)</p>
+              <p class="text-secondary"><strong>text-secondary</strong> — Warna abu-abu (secondary)</p>
+              <p class="text-success"><strong>text-success</strong> — Warna hijau (sukses/berhasil)</p>
+              <p class="text-danger"><strong>text-danger</strong> — Warna merah (bahaya/error)</p>
+              <p class="text-warning"><strong>text-warning</strong> — Warna kuning (peringatan)</p>
+              <p class="text-info"><strong>text-info</strong> — Warna biru muda (informasi)</p>
+              <p class="text-dark"><strong>text-dark</strong> — Warna gelap (hampir hitam)</p>
+              <p class="text-muted"><strong>text-muted</strong> — Warna abu teredam (tidak terlalu mencolok)</p>
+              <p class="bg-dark p-2 rounded">
+                <span class="text-white"><strong>text-white</strong> — Warna putih (tampak di background gelap)</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ---- 10B: Contextual Background ---- -->
+      <div class="row mb-4">
+        <div class="col-12">
+          <div class="card shadow-sm">
+            <div class="card-header bg-dark text-white">
+              <strong>10B — Contextual Background</strong>
+              <small class="ml-2 text-muted">class="bg-*"</small>
+            </div>
+            <div class="card-body">
+              <p class="text-muted mb-3">
+                Beri warna latar belakang elemen dengan class
+                <code>bg-[warna]</code> tanpa menulis CSS manual.
+              </p>
+              <!-- PERTEMUAN 10: Contextual background -->
+              <div class="row">
+                <div class="col-6 col-md-3 mb-2">
+                  <div class="bg-primary text-white text-center p-3 rounded">
+                    <code>bg-primary</code>
+                  </div>
+                </div>
+                <div class="col-6 col-md-3 mb-2">
+                  <div class="bg-secondary text-white text-center p-3 rounded">
+                    <code>bg-secondary</code>
+                  </div>
+                </div>
+                <div class="col-6 col-md-3 mb-2">
+                  <div class="bg-success text-white text-center p-3 rounded">
+                    <code>bg-success</code>
+                  </div>
+                </div>
+                <div class="col-6 col-md-3 mb-2">
+                  <div class="bg-danger text-white text-center p-3 rounded">
+                    <code>bg-danger</code>
+                  </div>
+                </div>
+                <div class="col-6 col-md-3 mb-2">
+                  <div class="bg-warning text-dark text-center p-3 rounded">
+                    <code>bg-warning</code>
+                  </div>
+                </div>
+                <div class="col-6 col-md-3 mb-2">
+                  <div class="bg-info text-white text-center p-3 rounded">
+                    <code>bg-info</code>
+                  </div>
+                </div>
+                <div class="col-6 col-md-3 mb-2">
+                  <div class="bg-light text-dark text-center p-3 rounded border">
+                    <code>bg-light</code>
+                  </div>
+                </div>
+                <div class="col-6 col-md-3 mb-2">
+                  <div class="bg-dark text-white text-center p-3 rounded">
+                    <code>bg-dark</code>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ---- 10C: Icon dengan Font Awesome ---- -->
+      <div class="row mb-4">
+        <div class="col-12">
+          <div class="card shadow-sm">
+            <div class="card-header bg-dark text-white">
+              <strong>10C — Icon</strong>
+              <small class="ml-2 text-muted">Font Awesome 5</small>
+            </div>
+            <div class="card-body">
+              <p class="text-muted mb-3">
+                Bootstrap 4 tidak lagi menyertakan Glyphicon. Sebagai gantinya,
+                kita menggunakan <strong>Font Awesome</strong> yang di-include
+                via CDN. Icon ditambahkan dengan tag <code>&lt;i&gt;</code>
+                dan class <code>fas fa-[nama-icon]</code>.
+              </p>
+              <!-- PERTEMUAN 10: Contoh penggunaan icon Font Awesome -->
+              <div class="row text-center">
+                <div class="col-6 col-sm-4 col-md-2 mb-3">
+                  <i class="fas fa-home fa-2x text-primary mb-1 d-block"></i>
+                  <small><code>fa-home</code></small>
+                </div>
+                <div class="col-6 col-sm-4 col-md-2 mb-3">
+                  <i class="fas fa-user fa-2x text-success mb-1 d-block"></i>
+                  <small><code>fa-user</code></small>
+                </div>
+                <div class="col-6 col-sm-4 col-md-2 mb-3">
+                  <i class="fas fa-envelope fa-2x text-danger mb-1 d-block"></i>
+                  <small><code>fa-envelope</code></small>
+                </div>
+                <div class="col-6 col-sm-4 col-md-2 mb-3">
+                  <i class="fas fa-phone fa-2x text-info mb-1 d-block"></i>
+                  <small><code>fa-phone</code></small>
+                </div>
+                <div class="col-6 col-sm-4 col-md-2 mb-3">
+                  <i class="fas fa-search fa-2x text-warning mb-1 d-block"></i>
+                  <small><code>fa-search</code></small>
+                </div>
+                <div class="col-6 col-sm-4 col-md-2 mb-3">
+                  <i class="fas fa-graduation-cap fa-2x text-dark mb-1 d-block"></i>
+                  <small><code>fa-graduation-cap</code></small>
+                </div>
+              </div>
+
+              <hr>
+              <!-- PERTEMUAN 10: Icon di dalam button -->
+              <h6 class="mb-3">Icon di Dalam Button</h6>
+              <button class="btn btn-primary mr-2 mb-2">
+                <i class="fas fa-paper-plane mr-1"></i> Kirim
+              </button>
+              <button class="btn btn-success mr-2 mb-2">
+                <i class="fas fa-check mr-1"></i> Setuju
+              </button>
+              <button class="btn btn-danger mr-2 mb-2">
+                <i class="fas fa-trash mr-1"></i> Hapus
+              </button>
+              <button class="btn btn-info mr-2 mb-2">
+                <i class="fas fa-edit mr-1"></i> Edit
+              </button>
+              <button class="btn btn-secondary mb-2">
+                <i class="fas fa-download mr-1"></i> Unduh
+              </button>
+
+              <hr>
+              <!-- PERTEMUAN 10: Ukuran icon -->
+              <h6 class="mb-3">Ukuran Icon (fa-xs sampai fa-3x)</h6>
+              <i class="fas fa-star fa-xs text-warning mr-2"></i>
+              <i class="fas fa-star text-warning mr-2"></i>
+              <i class="fas fa-star fa-lg text-warning mr-2"></i>
+              <i class="fas fa-star fa-2x text-warning mr-2"></i>
+              <i class="fas fa-star fa-3x text-warning mr-2"></i>
+              <br>
+              <small class="text-muted">fa-xs &nbsp; normal &nbsp; fa-lg &nbsp; fa-2x &nbsp; fa-3x</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ---- 10D: Clearfix ---- -->
+      <div class="row mb-4">
+        <div class="col-12 col-md-6 mb-3">
+          <div class="card shadow-sm h-100">
+            <div class="card-header bg-dark text-white">
+              <strong>10D — Clearfix</strong>
+              <small class="ml-2 text-muted">class="clearfix"</small>
+            </div>
+            <div class="card-body">
+              <p class="text-muted mb-3">
+                <code>clearfix</code> digunakan pada elemen parent agar
+                container membungkus elemen <em>float</em> di dalamnya dengan benar.
+              </p>
+
+              <!-- TANPA clearfix — layout bisa rusak -->
+              <p class="mb-1"><strong>Tanpa clearfix</strong> (parent tidak membungkus float):</p>
+              <div class="border border-danger p-2 mb-3" style="background:#fff3f3;">
+                <div class="bg-danger text-white text-center p-2 rounded"
+                     style="width:80px; float:left;">Float</div>
+                <!-- Tidak ada clearfix -->
+              </div>
+              <div class="clearfix"></div>
+
+              <!-- DENGAN clearfix — layout benar -->
+              <p class="mb-1"><strong>Dengan clearfix</strong> (parent membungkus float):</p>
+              <div class="border border-success p-2 clearfix" style="background:#f3fff3;">
+                <div class="bg-success text-white text-center p-2 rounded"
+                     style="width:80px; float:left;">Float</div>
+                <p class="ml-2" style="overflow:hidden; margin-bottom:0;">
+                  Teks ini tidak tertimpa berkat <code>clearfix</code> pada parent.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ---- 10E: Screen Reader ---- -->
+        <div class="col-12 col-md-6 mb-3">
+          <div class="card shadow-sm h-100">
+            <div class="card-header bg-dark text-white">
+              <strong>10E — Screen Reader</strong>
+              <small class="ml-2 text-muted">class="sr-only"</small>
+            </div>
+            <div class="card-body">
+              <p class="text-muted mb-3">
+                Class <code>sr-only</code> menyembunyikan elemen secara visual
+                tetapi masih dapat dibaca oleh <em>screen reader</em>
+                (teknologi bantu untuk penyandang disabilitas visual).
+                Ini penting untuk aksesibilitas web.
+              </p>
+              <!-- PERTEMUAN 10: Screen reader -->
+              <p>Teks ini terlihat secara normal oleh semua pengguna.</p>
+              <p class="sr-only">
+                Teks ini HANYA terbaca oleh screen reader, tidak terlihat di layar.
+              </p>
+              <p>
+                Kalimat di atas sudah ada tapi tidak terlihat (gunakan DevTools
+                untuk membuktikannya — ada elemen dengan class <code>sr-only</code>).
+              </p>
+              <div class="alert alert-info mt-3">
+                <i class="fas fa-info-circle mr-1"></i>
+                <code>sr-only</code> menggunakan teknik CSS:
+                <code>position: absolute; width: 1px; height: 1px; overflow: hidden;</code>
+                sehingga elemen ada di DOM tapi tidak terlihat secara visual.
+              </div>
+
+              <!-- sr-only-focusable: muncul hanya saat di-focus (skip nav) -->
+              <a href="#tentang" class="sr-only sr-only-focusable btn btn-primary btn-sm">
+                Lewati ke konten utama
+              </a>
+              <p class="text-muted mt-2">
+                <small>
+                  <code>sr-only-focusable</code>: tombol "skip to content" yang muncul
+                  hanya saat di-tab (coba tekan Tab di halaman ini).
+                </small>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ---- 10F: Menampilkan & Menyembunyikan Konten (Responsive Utility) ---- -->
+      <div class="row mb-4">
+        <div class="col-12">
+          <div class="card shadow-sm">
+            <div class="card-header bg-dark text-white">
+              <strong>10F — Responsive Utility: Menampilkan &amp; Menyembunyikan Konten</strong>
+              <small class="ml-2 text-muted">d-none / d-block / d-sm-none / d-md-block ...</small>
+            </div>
+            <div class="card-body">
+              <p class="text-muted mb-3">
+                Bootstrap 4 menggunakan utility class <code>d-*</code> untuk mengatur
+                visibilitas elemen di berbagai ukuran layar. Format:
+                <code>d-[breakpoint]-[nilai]</code>.
+                Breakpoint: <code>sm</code>, <code>md</code>, <code>lg</code>, <code>xl</code>.
+                Nilai: <code>none</code>, <code>block</code>, <code>inline</code>,
+                <code>inline-block</code>, <code>flex</code>, dll.
+              </p>
+
+              <!-- PERTEMUAN 10: Tabel penjelasan responsive utility -->
+              <div class="table-responsive mb-4">
+                <table class="table table-bordered table-sm">
+                  <thead class="thead-dark">
+                    <tr>
+                      <th>Class</th>
+                      <th>Efek</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><code>d-none</code></td>
+                      <td>Sembunyikan di semua ukuran layar</td>
+                    </tr>
+                    <tr>
+                      <td><code>d-block</code></td>
+                      <td>Tampilkan (display: block) di semua ukuran layar</td>
+                    </tr>
+                    <tr>
+                      <td><code>d-none d-md-block</code></td>
+                      <td>Sembunyi di layar kecil, tampil ab layar md ke atas</td>
+                    </tr>
+                    <tr>
+                      <td><code>d-block d-md-none</code></td>
+                      <td>Tampil di layar kecil, sembunyi ab layar md ke atas</td>
+                    </tr>
+                    <tr>
+                      <td><code>d-none d-lg-block</code></td>
+                      <td>Sembunyi di bawah lg, tampil di lg ke atas</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <!-- PERTEMUAN 10: Demo live responsive utility -->
+              <h6 class="mb-3">Demo Live — Ubah ukuran browser untuk melihat efeknya:</h6>
+              <div class="row">
+                <!-- Hanya terlihat di layar kecil (< md) -->
+                <div class="col-12 mb-2">
+                  <div class="alert alert-warning d-block d-md-none mb-0">
+                    <i class="fas fa-mobile-alt mr-2"></i>
+                    <strong>d-block d-md-none</strong> — Elemen ini HANYA terlihat di layar kecil
+                    (HP/tablet kecil, lebar &lt; 768px)
+                  </div>
+                </div>
+                <!-- Hanya terlihat di layar md ke atas -->
+                <div class="col-12 mb-2">
+                  <div class="alert alert-success d-none d-md-block mb-0">
+                    <i class="fas fa-desktop mr-2"></i>
+                    <strong>d-none d-md-block</strong> — Elemen ini HANYA terlihat di layar sedang
+                    ke atas (tablet besar / desktop, lebar &ge; 768px)
+                  </div>
+                </div>
+                <!-- Hanya terlihat di layar lg ke atas -->
+                <div class="col-12 mb-2">
+                  <div class="alert alert-primary d-none d-lg-block mb-0">
+                    <i class="fas fa-tv mr-2"></i>
+                    <strong>d-none d-lg-block</strong> — Elemen ini HANYA terlihat di layar
+                    besar ke atas (desktop, lebar &ge; 992px)
+                  </div>
+                </div>
+                <!-- Selalu terlihat -->
+                <div class="col-12 mb-2">
+                  <div class="alert alert-secondary mb-0">
+                    <i class="fas fa-eye mr-2"></i>
+                    <strong>d-block</strong> — Elemen ini selalu terlihat di semua ukuran layar
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ---- 10G: Float & Image Replacement ---- -->
+      <div class="row mb-2">
+        <div class="col-12">
+          <div class="card shadow-sm">
+            <div class="card-header bg-dark text-white">
+              <strong>10G — Float Utility &amp; Image Replacement</strong>
+              <small class="ml-2 text-muted">float-left / float-right / text-hide</small>
+            </div>
+            <div class="card-body">
+              <div class="row">
+                <!-- Float utility -->
+                <div class="col-12 col-md-6 mb-3">
+                  <h6>Float Utility</h6>
+                  <p class="text-muted">
+                    Class <code>float-left</code>, <code>float-right</code>, dan
+                    <code>float-none</code> untuk mengatur posisi elemen.
+                    Tersedia juga versi responsif seperti <code>float-md-right</code>.
+                  </p>
+                  <div class="clearfix border p-3 rounded bg-light">
+                    <span class="badge badge-primary float-left p-2">float-left</span>
+                    <span class="badge badge-danger float-right p-2">float-right</span>
+                    <div class="clearfix"></div>
+                    <span class="badge badge-success float-none d-block text-center mt-2 p-2">
+                      float-none (normal flow)
+                    </span>
+                  </div>
+                </div>
+                <!-- Image Replacement -->
+                <div class="col-12 col-md-6 mb-3">
+                  <h6>Image Replacement (<code>text-hide</code>)</h6>
+                  <p class="text-muted">
+                    Class <code>text-hide</code> digunakan untuk menggantikan teks dengan
+                    gambar latar (background-image) tanpa mengorbankan aksesibilitas —
+                    teks tetap ada di HTML untuk screen reader, namun tidak terlihat secara visual.
+                  </p>
+                  <div class="alert alert-secondary">
+                    <i class="fas fa-lightbulb text-warning mr-1"></i>
+                    Teknik ini umum digunakan pada logo atau elemen branding yang
+                    ditampilkan sebagai gambar tetapi perlu teks untuk SEO dan aksesibilitas.
+                  </div>
+                  <!-- Contoh text-hide (simulasi dengan CSS) -->
+                  <div class="demo-text-hide text-hide p-3 rounded text-center"
+                       title="Logo MI Univ (text-hide)">
+                    Logo MI Univ
+                  </div>
+                  <small class="text-muted">
+                    Di atas: teks "Logo MI Univ" ada di HTML tapi digantikan background-image.
+                  </small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <!-- /HELPER CLASS -->
+
+
+  <!-- =============================================
+       FOOTER
+  ============================================== -->
+  <footer class="bg-dark text-white text-center py-3">
+    <div class="container">
+      <p class="mb-0">
+        &copy; 2025 Manajemen Informatika — Web Desain II Demo
+      </p>
+      <!-- PERTEMUAN 5: Text transform -->
+      <small class="text-muted text-uppercase">dibuat dengan bootstrap 4</small>
+    </div>
+  </footer>
+  <!-- /FOOTER -->
+
+
+  <!-- =============================================
+       PERTEMUAN 4: jQuery + Bootstrap JS — wajib urutan ini!
+       1. jQuery dulu
+       2. Popper.js
+       3. Bootstrap JS
+       4. JS kita sendiri
+  ============================================== -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="main.js"></script>
+
+</body>
+</html>
